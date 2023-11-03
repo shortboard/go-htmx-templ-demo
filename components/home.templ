@@ -1,0 +1,36 @@
+package components
+
+templ Home(clicked int) {
+    <html>
+        @head("Home")
+        <body>
+            <div class="md:container md:mx-auto">
+                <div class="border-b border-gray-200 bg-white px-4 py-5 sm:px-6">
+                    <div class="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap">
+                        <div class="ml-4 mt-2">
+                            <h3 class="text-base font-semibold leading-6 text-gray-900">Home</h3>
+                            @hello("World")
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center m-4">
+                    <p class="text-center">This is the home page.</p>
+                    @clickCounter(clicked)
+                </div>
+            </div>
+        </body>
+    </html>
+}
+
+templ head(title string){
+    <head>
+        <title>{title}</title>
+        <script src="https://unpkg.com/htmx.org@1.9.5" type="text/javascript"></script>
+        <link rel="stylesheet" href="/dist/styles.css"/>
+    </head>
+}
+
+templ hello(name string) {
+    <p class="text-sm font-light leading-6 text-gray-900">Hello, { name }</p>
+}
+

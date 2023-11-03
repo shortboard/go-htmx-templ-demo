@@ -1,0 +1,14 @@
+package components
+
+import (
+    "fmt"
+)
+
+templ clickCounter(clicked int) {
+        <div hx-get="/api/click" hx-swap="outerHtml" hx-target=".counter" class="m-4">@button("Click me")</div>
+        @Counter(clicked)
+}
+
+templ Counter(count int) {
+    <p class="text-center font-bold counter">Clicked {fmt.Sprint(count)} times</p>
+}
